@@ -14,28 +14,28 @@ What's done in this project:
 ### Records Creation
 
 - create User
-![user creation](https://pasteboard.co/N5O6b5jgyMXL.png)
+![user creation](github_images/create_user.png)
 
 - create Item
-![user creation](https://pasteboard.co/QjFMJZqKCMxL.png)
+![user creation](github_images/create_item.png)
 
 ### Preview
 
 #### ActionMailer preview
 
 - user preview
-![user preview](https://pasteboard.co/xxKLy8RO1Lxl.png)
+![user preview](github_images/user_preview.png)
 
 - item preview
-![item preview](https://pasteboard.co/Rpr4sksEJpeg.png)
+![item preview](github_images/item_preview.png)
 
 #### Mailhog preview
 
 - user preview
-![user preview](https://pasteboard.co/7XSQCMuPmC6t.png)
+![user preview](github_images/user_mailhog.png)
 
 - item preview
-![item preview](https://pasteboard.co/D8lA70IQ5Ghi.png)
+![item preview](github_images/item_mailhog.png)
 
 
 
