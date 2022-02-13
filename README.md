@@ -1,7 +1,7 @@
 # README
 
 ## OverView
-In this Ruby On Rails project there is User model and when ever new user created a welcome email will be send to the user.
+This project is a practice for Rails Mailer.
 
 What's done in this project:
 - create a user and item scaffold.
