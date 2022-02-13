@@ -1,8 +1,8 @@
 class ItemMailer < ApplicationMailer
-    def new_item_mail
+    def new_item_mail(users)
         @item = params[:item]
-        User.all.each do |user|
-        mail(to: user.email, subject: "New Item Created!")
-        end
+     
+        mail(to: users.pluck(:email), subject: "New Item Created!")     
+  
     end
 end
