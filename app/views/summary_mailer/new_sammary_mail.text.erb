@@ -1,0 +1,19 @@
+Here Is Daily Summary Of Items And Users!
+===============================================
+
+New Users:
+--------------------------
+ <% @users.each do |user| %>
+    #<%= user.id %>
+    Name: <%= user.name %>
+    Email: <%= user.email %>
+<%end%>
++++++++++++++++++++++++++++++++++++++++++++
+New Items:
+--------------------------
+ <% @items.each do |item| %>
+    #<%= item.id %>
+    Name: <%= item.name %>
+    description: <%= item.description %>
+    price: <%= item.price %>
+<%end%>

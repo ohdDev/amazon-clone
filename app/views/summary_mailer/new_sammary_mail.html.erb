@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Here Is Daily Summary Of Items And Users!</p>
+    <p>
+    New Users<br>
+    --------------------------
+    </p>
+    <% @users.each do |user| %>
+    <p>#<%= user.id %></p>
+    <p>Name: <%= user.name %></p>
+    <p>Email: <%= user.email %></p>
+    <%end%>
+  <p>+++++++++++++++++++++++++++++++++++++++++++</p>
+     <p>
+    New Items<br>
+    --------------------------
+    </p>
+    <% @items.each do |item| %>
+    <p>#<%= item.id %></p>
+    <p>Name: <%= item.name %></p>
+    <p>description: <%= item.description %></p>
+    <p>price: <%= item.price %></p>
+    <%end%>
+    <p>
+  </body>
+</html>

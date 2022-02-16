@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
   # GET /users or /users.json
   def index
     @users = User.all
   end
+
 
   # GET /users/1 or /users/1.json
   def show
@@ -22,10 +22,11 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-
+    
     respond_to do |format|
       if @user.save
         SendWelcomeEmailJob.perform_later(@user)
+        UserItemSummaryJob.set(wait_until: 1.day).perform_later()
 
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }

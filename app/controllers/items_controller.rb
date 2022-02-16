@@ -27,8 +27,7 @@ class ItemsController < ApplicationController
       if @item.save
         users = User.all
        
-             ItemMailer.with(item: @item).new_item_mail(users).deliver_now
-   
+        ItemMailer.with(item: @item).new_item_mail(users).deliver_now
  
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
         format.json { render :show, status: :created, location: @item }
