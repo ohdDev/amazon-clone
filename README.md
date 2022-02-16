@@ -39,6 +39,8 @@ What's done in this project:
 
 
 
+
+
 ## References
 - [Ruby On Rails documentation](https://guides.rubyonrails.org/v5.1/getting_started.html)
 - [Action Mailer Documentation](https://guides.rubyonrails.org/action_mailer_basics.html)
