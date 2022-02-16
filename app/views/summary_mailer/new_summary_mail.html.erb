@@ -9,22 +9,23 @@
     New Users<br>
     --------------------------
     </p>
-    <% @users.each do |user| %>
+<%@users.each do |user|%>
     <p>#<%= user.id %></p>
     <p>Name: <%= user.name %></p>
     <p>Email: <%= user.email %></p>
-    <%end%>
+<%end%>
   <p>+++++++++++++++++++++++++++++++++++++++++++</p>
      <p>
     New Items<br>
     --------------------------
     </p>
-    <% @items.each do |item| %>
+
+<%@items.each do |item|%>
     <p>#<%= item.id %></p>
     <p>Name: <%= item.name %></p>
     <p>description: <%= item.description %></p>
     <p>price: <%= item.price %></p>
-    <%end%>
+<%end%>
     <p>
   </body>
 </html>

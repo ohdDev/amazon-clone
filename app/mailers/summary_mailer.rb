@@ -1,5 +1,5 @@
 class SummaryMailer < ApplicationMailer
-    def new_summary_mail(users,items)
+    def new_summary_mail
         @items = params[:items]
         @users = params[:users]
      
