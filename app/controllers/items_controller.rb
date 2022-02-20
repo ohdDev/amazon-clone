@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
        
         ItemMailer.with(item: @item).new_item_mail(users).deliver_now
  
+        UserItemSummaryJob.set(wait_until: 1.day).perform_later()
+        
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
         format.json { render :show, status: :created, location: @item }
       else

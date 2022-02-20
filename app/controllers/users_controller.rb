@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         SendWelcomeEmailJob.perform_later(@user)
+        # UserItemSummaryJob.set(wait_until: 1.day).perform_later()
         UserItemSummaryJob.set(wait_until: 1.day).perform_later()
 
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
