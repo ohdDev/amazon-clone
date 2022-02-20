@@ -1,5 +1,8 @@
 <p style="color: green"><%= notice %></p>
-<%= image_tag @item.picture%>
+<%= image_tag(@item.picture, size: "200x200")%>
+<% @item.uploads.each do |u| %>
+<%= image_tag(u, size: "200x200")%>
+<%end%>
 <%= render @item %>
 
 <div>
