@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :items do
     member do
       delete :purge_picture
+      delete :purge_uploads
     end
   end
 
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get '/items/:id/purge_picture', to: 'items#purge_picture', as: :DELETE
+  get 'uploads/:id/purge', to: 'uploads#purge', as: 'purge_uploads'
 
 end

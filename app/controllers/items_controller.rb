@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     redirect_back fallback_location: items_path, notice: "success"
   end
 
+
   # GET /items/new
   def new
     @item = Item.new
