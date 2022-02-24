@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :items do
     member do
       delete :purge_picture
@@ -13,5 +14,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/items/:id/purge_picture', to: 'items#purge_picture', as: :DELETE
   get 'uploads/:id/purge', to: 'uploads#purge', as: 'purge_uploads'
+
+  get 'home', to: 'application#home'
+  root 'application#home'
 
 end
