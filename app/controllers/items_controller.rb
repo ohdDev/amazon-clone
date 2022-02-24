@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :set_item, only: %i[ show edit update destroy  ]
 
   # GET /items or /items.json
   def index
@@ -8,6 +8,12 @@ class ItemsController < ApplicationController
 
   # GET /items/1 or /items/1.json
   def show
+  end
+
+  def purge_picture
+    @item = Item.find(params[:id])
+    @item.picture.purge
+    redirect_back fallback_location: items_path, notice: "success"
   end
 
   # GET /items/new

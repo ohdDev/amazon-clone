@@ -1,7 +1,16 @@
 <p style="color: green"><%= notice %></p>
+
+<% if @item.picture.attached?%>
 <%= image_tag(@item.picture, size: "200x200")%>
+<%= link_to "Delete Main Picture", purge_picture_item_path(@item), method: :delete %>
+<%end%>
+
 <% @item.uploads.each do |u| %>
+<% if u.representable? %>
+<%= image_tag u.representation(resize_to_limit: [100,100])%>
+<%else%>
 <%= image_tag(u, size: "200x200")%>
+<%end%>
 <%end%>
 <%= render @item %>
 
