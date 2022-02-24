@@ -38,6 +38,18 @@ What's done in this project:
 ![item preview](github_images/item_mailhog.png)
 
 
+## Active Job
+
+#### Send welcome email
+![welcome mail](github_images/active_job_welcome.png)
+
+
+#### Send Daily summury for Items and users
+![summary mail](github_images/active_job_email.png)
+
+![summary mail](github_images/active_job_email_content.png)
+
+![summary mail](github_images/active_job_email_content2.png)
 
 ## References
 - [Ruby On Rails documentation](https://guides.rubyonrails.org/v5.1/getting_started.html)

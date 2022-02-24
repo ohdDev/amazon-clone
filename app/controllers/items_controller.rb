@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :set_item, only: %i[ show edit update destroy  ]
 
   # GET /items or /items.json
   def index
@@ -9,6 +9,13 @@ class ItemsController < ApplicationController
   # GET /items/1 or /items/1.json
   def show
   end
+
+  def purge_picture
+    @item = Item.find(params[:id])
+    @item.picture.purge
+    redirect_back fallback_location: items_path, notice: "success"
+  end
+
 
   # GET /items/new
   def new
@@ -27,9 +34,10 @@ class ItemsController < ApplicationController
       if @item.save
         users = User.all
        
-             ItemMailer.with(item: @item).new_item_mail(users).deliver_now
-   
+        ItemMailer.with(item: @item).new_item_mail(users).deliver_now
  
+        UserItemSummaryJob.set(wait_until: 1.day).perform_later()
+        
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
         format.json { render :show, status: :created, location: @item }
       else
@@ -71,6 +79,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :description, :price)
+      params.require(:item).permit(:name, :description, :price, :picture, :uploads => [])
     end
 end
